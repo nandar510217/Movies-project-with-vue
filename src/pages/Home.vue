@@ -1,11 +1,25 @@
 <template>
-    <div>
-        <h1>Home Pages</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam nemo illum temporibus officia quis ab facilis omnis, reiciendis nam sint rerum quod aspernatur repudiandae, labore, similique accusamus quas sed excepturi!</p>
+    <div id="movies" class="container my-5">
+      <h4>Movies</h4>
+      <div class="row g-3">
+        <div v-for="movie in movies" :key="movie.id" class="col-md-4">
+          <div class="card card-body p-0 border border-danger overflow-hidden imgHeight">
+            <img :src="movie.imageSrc" alt="">
+            <div class="px-2 py-3 text-center">
+              <p>{{movie.year}}</p>
+              <router-link :to="`/movies/${movie.id}`" class="btn btn-sm btn-primary">Detail</router-link>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 </template>
 
 <script setup>
+import { inject } from 'vue';
+
+  const movies = inject('movies')
 
 </script>
 
