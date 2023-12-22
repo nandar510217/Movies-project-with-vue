@@ -5,7 +5,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 // step 1
 const Home = () => import('./pages/Home.vue')
 const About = () => import('./pages/About.vue')
+const Movies = () => import('./pages/Movies.vue')
 const Movie = () => import('./pages/Movie.vue')
+const MovieOverview = () => import('./pages/MovieOverview.vue')
+const MovieTrailer = () => import('./pages/MovieTrailer.vue')
+const MovieArtist = () => import('./pages/MovieArtist.vue')
 
 
 //step 2
@@ -19,8 +23,27 @@ const routes = [
         component: About
     },
     {
+        path: '/movies',
+        component: Movies
+    },
+    //nested routes
+    {
         path: '/movies/:id',
-        component: Movie
+        component: Movie,
+        children: [
+            {
+                path: '',
+                component: MovieOverview,
+            },
+            {
+                path: 'trailer',
+                component: MovieTrailer,
+            },
+            {
+                path: 'artist',
+                component: MovieArtist,
+            }
+        ]
     }
 ]
 
