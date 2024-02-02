@@ -7,12 +7,12 @@
       <div class="row g-3">
         <template v-for="movie in movies" :key="movie.id">
           <div v-if="movie.isTop" class="col-md-4">
-            <div class="card card-body p-0 border border-danger overflow-hidden imgHeight">
-            <img :src="movie.imageSrc" alt="">
+            <div class="card card-body p-0 border overflow-hidden imgHeight">
+            <img :src="movie.imageSrc" alt="" style="width: 450px; height: 500px; object-fit: cover;">
             <div class="px-2 py-3 text-center">
               <p>{{movie.year}}</p>
               <h6>{{ movie.name }}</h6>
-              <router-link :to="`/movies/${movie.id}`" class="btn btn-sm btn-primary">Detail</router-link>
+              <router-link :to="{name: 'movieOverview', params: {id:movie.id}}" class="btn btn-sm btn-primary">Detail</router-link>
             </div>
           </div>
           </div>

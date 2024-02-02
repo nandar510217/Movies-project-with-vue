@@ -1,17 +1,17 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-transparent position-fixed w-100">
       <div class="container">
-        <router-link to="/" class="navbar-brand" href="#">Vueflix</router-link>
+        <router-link :to="{name:'home'}" class="navbar-brand">Vueflix</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/movies" class="nav-link">Movies</router-link>
+              <router-link :to="{ name:'movies' }" class="nav-link">Movies</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">About</router-link>
+              <router-link :to="{ name: 'about' }" class="nav-link">About</router-link>
             </li>
           </ul>
         </div>

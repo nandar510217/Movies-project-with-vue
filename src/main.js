@@ -16,31 +16,39 @@ const MovieArtist = () => import('./pages/MovieArtist.vue')
 const routes = [
     {
         path: '/',
+        name:'home',
         component: Home
     },
     {
         path: '/about',
-        component: About
+        name:'about',
+        component: About    
     },
     {
         path: '/movies',
+        name:'movies',
         component: Movies
     },
+
     //nested routes
     {
         path: '/movies/:id',
+        name:'movie',
         component: Movie,
         children: [
             {
                 path: '',
+                name:'movieOverview',
                 component: MovieOverview,
             },
             {
                 path: 'trailer',
+                name:'movieTrailer',
                 component: MovieTrailer,
             },
             {
                 path: 'artist',
+                name:'movieArtist',
                 component: MovieArtist,
             }
         ]
